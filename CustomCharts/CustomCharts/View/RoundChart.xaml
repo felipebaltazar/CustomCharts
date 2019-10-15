@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Frame xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    x:Class="CustomCharts.View.RoundChart"
+    xmlns:views="clr-namespace:CustomCharts.View"
+    xmlns:sk="clr-namespace:SkiaSharp.Views.Forms;assembly=SkiaSharp.Views.Forms"
+    BackgroundColor="White"
+    CornerRadius="10"
+    HasShadow="True">
+    <Grid Padding="0" ColumnSpacing="0" RowSpacing="0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="33*"/>
+            <RowDefinition Height="33*"/>
+            <RowDefinition Height="33*"/>
+        </Grid.RowDefinitions>
+        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="25*"/>
+            <ColumnDefinition Width="50*"/>
+            <ColumnDefinition Width="25*"/>
+        </Grid.ColumnDefinitions>
+        <sk:SKCanvasView x:Name="canvasView" Grid.Row="0" Grid.RowSpan="3"
+                         Grid.Column="0" Grid.ColumnSpan="3"
+                         PaintSurface="OnCanvasViewPaintSurface" />
+
+        <views:AutoFitLabel x:Name="valueLabel" MaxLines="1" Grid.Row="1" Grid.Column="1" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"
+               VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>
+    </Grid>
+</Frame>
